@@ -22,11 +22,15 @@ class UpgradeViewController: UIViewController {
     }
     
     @IBAction func upgradeButtonTapped(sender: AnyObject) {
-        UpgradeManager.sharedInstance.upgrade()
+        UpgradeManager.sharedInstance.upgrade { (succeeded) -> (Void) in
+            
+        }
     }
     
     @IBAction func restorePurchasesButtonTapped(sender: AnyObject) {
-        UpgradeManager.sharedInstance.restorePurchases()
+        UpgradeManager.sharedInstance.restorePurchases { (succeeded) -> (Void) in
+            
+        }
     }
     
 }
