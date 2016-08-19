@@ -24,6 +24,8 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     }
     
     func upgrade(success: SuccessHandler) {
+        upgradeCompletionHandler = success
+        
         if let product = famousQuotesProduct {
             let payment = SKPayment(product: product)
             SKPaymentQueue.defaultQueue().addPayment(payment)
@@ -31,7 +33,9 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     }
     
     func restorePurchases(success: SuccessHandler) {
+        restoreCompletionHandler = success
         
+        SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
     }
     
     func priceForUpgrade(success: (price: Float) -> Void) {
