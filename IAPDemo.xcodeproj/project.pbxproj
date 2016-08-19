@@ -14,6 +14,7 @@
 		5443E7631D216976004E41AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5443E7611D216976004E41AE /* LaunchScreen.storyboard */; };
 		5443E76B1D217051004E41AE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443E76A1D217051004E41AE /* Networking.swift */; };
 		5443E76D1D2172E1004E41AE /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443E76C1D2172E1004E41AE /* Quote.swift */; };
+		549E37AB1D65F1BC0041BF56 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E37AA1D65F1BC0041BF56 /* UpgradeViewController.swift */; };
 		549FA8FD1D65E1920049E1A3 /* UpgradeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549FA8FC1D65E1920049E1A3 /* UpgradeManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		5443E7641D216976004E41AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5443E76A1D217051004E41AE /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		5443E76C1D2172E1004E41AE /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		549E37AA1D65F1BC0041BF56 /* UpgradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
 		549FA8FC1D65E1920049E1A3 /* UpgradeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 				5443E76A1D217051004E41AE /* Networking.swift */,
 				5443E76C1D2172E1004E41AE /* Quote.swift */,
 				549FA8FC1D65E1920049E1A3 /* UpgradeManager.swift */,
+				549E37AA1D65F1BC0041BF56 /* UpgradeViewController.swift */,
 				5443E75C1D216976004E41AE /* Main.storyboard */,
 				5443E75F1D216976004E41AE /* Assets.xcassets */,
 				5443E7611D216976004E41AE /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5443E76D1D2172E1004E41AE /* Quote.swift in Sources */,
+				549E37AB1D65F1BC0041BF56 /* UpgradeViewController.swift in Sources */,
 				5443E76B1D217051004E41AE /* Networking.swift in Sources */,
 				5443E75B1D216976004E41AE /* QuoteViewController.swift in Sources */,
 				5443E7591D216976004E41AE /* AppDelegate.swift in Sources */,

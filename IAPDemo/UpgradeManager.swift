@@ -12,6 +12,18 @@ class UpgradeManager: NSObject {
     static let sharedInstance = UpgradeManager()
     
     func hasUpgraded() -> Bool {
-        return true
+        return false
+    }
+    
+    func upgrade() {
+        
+    }
+    
+    func restorePurchases() {
+        
+    }
+    
+    func priceForUpgrade(success: (price: Float) -> Void) {
+        success(price: 0.0)
     }
 }

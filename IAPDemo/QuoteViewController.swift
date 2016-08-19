@@ -55,13 +55,7 @@ class QuoteViewController: UIViewController {
             let upgradeAction = UIAlertAction(title: "Upgrade",
                                               style: .Default,
                                               handler: { (action) in
-                                                // upgrade
-            })
-            
-            let restoreAction = UIAlertAction(title: "Restore",
-                                              style: .Default,
-                                              handler: { (action) in
-                                                // restore
+                                                self.performSegueWithIdentifier("ShowUpgradeViewController", sender: nil)
             })
             
             let laterAction = UIAlertAction(title: "Later",
@@ -69,7 +63,6 @@ class QuoteViewController: UIViewController {
                                             handler: nil)
             
             alertController.addAction(upgradeAction)
-            alertController.addAction(restoreAction)
             alertController.addAction(laterAction)
             
             presentViewController(alertController, animated: true, completion: nil)
