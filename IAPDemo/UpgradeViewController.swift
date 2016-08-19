@@ -11,9 +11,14 @@ import UIKit
 class UpgradeViewController: UIViewController {
     
     @IBOutlet weak var priceLabel: UILabel!
-    override func viewDidLoad() {
+    @IBOutlet weak var upgradeButton: UIButton!
+    @IBOutlet weak var restoreButton: UIButton!
+
+    override func viewDidAppear(animated: Bool) {
         UpgradeManager.sharedInstance.priceForUpgrade { (price) in
             self.priceLabel.text = "$\(price)"
+            self.upgradeButton.enabled = true
+            self.restoreButton.enabled = true
         }
     }
 
