@@ -11,7 +11,8 @@ import UIKit
 class UpgradeViewController: UIViewController {
     
     @IBOutlet weak var priceLabel: UILabel!
-    override func viewDidLoad() {
+    
+    override func viewDidAppear(animated: Bool) {
         UpgradeManager.sharedInstance.priceForUpgrade { (price) in
             self.priceLabel.text = "$\(price)"
         }

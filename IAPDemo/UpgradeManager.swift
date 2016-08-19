@@ -23,7 +23,10 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     }
     
     func upgrade(success: SuccessHandler) {
-        
+        if let product = famousQuotesProduct {
+            let payment = SKPayment(product: product)
+            SKPaymentQueue.defaultQueue().addPayment(payment)
+        }
     }
     
     func restorePurchases(success: SuccessHandler) {
@@ -31,6 +34,7 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     }
     
     func priceForUpgrade(success: (price: Float) -> Void) {
+        print("WTF?!")
         priceCompletionHandler = success
         
         let identifiers: Set<String> = [productIdentifier]
@@ -42,7 +46,21 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     // MARK: SKPaymentTransactionObserver
     
     func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .Purchased:
+                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                upgradeCompletionHandler?(succeeded: true)
+            case .Restored:
+                restoreCompletionHandler?(succeeded: true)
+            case .Failed:
+                upgradeCompletionHandler?(succeeded: true)
+            default:
+                return
+            }
+            
+            SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+        }
     }
     
     // MARK: SKProductsRequestDelegate
