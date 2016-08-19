@@ -10,9 +10,9 @@ import Foundation
 import StoreKit
 
 class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    typealias SuccessHandler = (succeeded: Bool) -> (Void)
-    
     static let sharedInstance = UpgradeManager()
+    let productIdentifier = "com.careerfoundry.randomquotes.famouspeoplequotes"
+    typealias SuccessHandler = (succeeded: Bool) -> (Void)
     var upgradeCompletionHandler: SuccessHandler?
     var restoreCompletionHandler: SuccessHandler?
     var priceCompletionHandler: ((price: Float) -> Void)?
