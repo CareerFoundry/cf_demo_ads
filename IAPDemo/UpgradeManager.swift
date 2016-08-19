@@ -17,7 +17,7 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     var restoreCompletionHandler: SuccessHandler?
     var priceCompletionHandler: ((price: Float) -> Void)?
     var famousQuotesProduct: SKProduct?
-    
+
     func hasUpgraded() -> Bool {
         return false
     }
@@ -34,7 +34,6 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     }
     
     func priceForUpgrade(success: (price: Float) -> Void) {
-        print("WTF?!")
         priceCompletionHandler = success
         
         let identifiers: Set<String> = [productIdentifier]
