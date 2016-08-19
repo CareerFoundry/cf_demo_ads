@@ -16,6 +16,7 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     var upgradeCompletionHandler: SuccessHandler?
     var restoreCompletionHandler: SuccessHandler?
     var priceCompletionHandler: ((price: Float) -> Void)?
+    var famousQuotesProduct: SKProduct?
     
     func hasUpgraded() -> Bool {
         return false
@@ -30,7 +31,12 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     }
     
     func priceForUpgrade(success: (price: Float) -> Void) {
-        success(price: 0.0)
+        priceCompletionHandler = success
+        
+        let identifiers: Set<String> = [productIdentifier]
+        let request = SKProductsRequest(productIdentifiers: identifiers)
+        request.delegate = self
+        request.start()
     }
     
     // MARK: SKPaymentTransactionObserver
@@ -42,6 +48,10 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     // MARK: SKProductsRequestDelegate
     
     func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
+        famousQuotesProduct = response.products.first
         
+        if let price = famousQuotesProduct?.price {
+            priceCompletionHandler?(price: Float(price))
+        }
     }
 }
