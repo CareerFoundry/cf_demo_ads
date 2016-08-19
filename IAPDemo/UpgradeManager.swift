@@ -17,9 +17,10 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
     var restoreCompletionHandler: SuccessHandler?
     var priceCompletionHandler: ((price: Float) -> Void)?
     var famousQuotesProduct: SKProduct?
+    let userDefaultsKey = "HasUpgradedUserDefaultsKey"
 
     func hasUpgraded() -> Bool {
-        return false
+        return NSUserDefaults.standardUserDefaults().boolForKey(userDefaultsKey)
     }
     
     func upgrade(success: SuccessHandler) {
@@ -48,12 +49,13 @@ class UpgradeManager: NSObject, SKProductsRequestDelegate, SKPaymentTransactionO
         for transaction in transactions {
             switch transaction.transactionState {
             case .Purchased:
-                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: userDefaultsKey)
                 upgradeCompletionHandler?(succeeded: true)
             case .Restored:
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: userDefaultsKey)
                 restoreCompletionHandler?(succeeded: true)
             case .Failed:
-                upgradeCompletionHandler?(succeeded: true)
+                upgradeCompletionHandler?(succeeded: false)
             default:
                 return
             }
