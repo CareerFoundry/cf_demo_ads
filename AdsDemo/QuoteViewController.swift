@@ -43,33 +43,8 @@ class QuoteViewController: UIViewController {
     }
     
     @IBAction func segmentedControlValueChanged(sender: AnyObject) {
-        let segmentedControl = sender as! UISegmentedControl
-        
-        if segmentedControl.selectedSegmentIndex == 1 && !UpgradeManager.sharedInstance.hasUpgraded() {
-            segmentedControl.selectedSegmentIndex = 0
-            
-            let alertController = UIAlertController(title: "Upgrade",
-                                                    message: "Please upgrade to be able to view quotes from famous people",
-                                                    preferredStyle: .Alert)
-            
-            let upgradeAction = UIAlertAction(title: "Upgrade",
-                                              style: .Default,
-                                              handler: { (action) in
-                                                self.performSegueWithIdentifier("ShowUpgradeViewController", sender: nil)
-            })
-            
-            let laterAction = UIAlertAction(title: "Later",
-                                            style: .Cancel,
-                                            handler: nil)
-            
-            alertController.addAction(upgradeAction)
-            alertController.addAction(laterAction)
-            
-            presentViewController(alertController, animated: true, completion: nil)
-        } else {
-            let quoteType = quoteTypeForSelectedSegmentedControlIndex()
-            getNewQuote(quoteType)
-        }
+        let quoteType = quoteTypeForSelectedSegmentedControlIndex()
+        getNewQuote(quoteType)
     }
     
     func quoteTypeForSelectedSegmentedControlIndex() -> Networking.QuoteType {

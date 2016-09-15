@@ -14,13 +14,10 @@
 		5443E7631D216976004E41AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5443E7611D216976004E41AE /* LaunchScreen.storyboard */; };
 		5443E76B1D217051004E41AE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443E76A1D217051004E41AE /* Networking.swift */; };
 		5443E76D1D2172E1004E41AE /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5443E76C1D2172E1004E41AE /* Quote.swift */; };
-		549E37AB1D65F1BC0041BF56 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549E37AA1D65F1BC0041BF56 /* UpgradeViewController.swift */; };
-		549FA8FD1D65E1920049E1A3 /* UpgradeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549FA8FC1D65E1920049E1A3 /* UpgradeManager.swift */; };
-		54E5D6801D67196A00CCCC66 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E5D67F1D67196A00CCCC66 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5443E7551D216976004E41AE /* IAPDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IAPDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5443E7551D216976004E41AE /* AdsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5443E7581D216976004E41AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5443E75A1D216976004E41AE /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		5443E75D1D216976004E41AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,9 +26,6 @@
 		5443E7641D216976004E41AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5443E76A1D217051004E41AE /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		5443E76C1D2172E1004E41AE /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
-		549E37AA1D65F1BC0041BF56 /* UpgradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
-		549FA8FC1D65E1920049E1A3 /* UpgradeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeManager.swift; sourceTree = "<group>"; };
-		54E5D67F1D67196A00CCCC66 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +33,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54E5D6801D67196A00CCCC66 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,8 +42,7 @@
 		5443E74C1D216976004E41AE = {
 			isa = PBXGroup;
 			children = (
-				54E5D67F1D67196A00CCCC66 /* StoreKit.framework */,
-				5443E7571D216976004E41AE /* IAPDemo */,
+				5443E7571D216976004E41AE /* AdsDemo */,
 				5443E7561D216976004E41AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,34 +50,32 @@
 		5443E7561D216976004E41AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5443E7551D216976004E41AE /* IAPDemo.app */,
+				5443E7551D216976004E41AE /* AdsDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5443E7571D216976004E41AE /* IAPDemo */ = {
+		5443E7571D216976004E41AE /* AdsDemo */ = {
 			isa = PBXGroup;
 			children = (
 				5443E7581D216976004E41AE /* AppDelegate.swift */,
 				5443E75A1D216976004E41AE /* QuoteViewController.swift */,
 				5443E76A1D217051004E41AE /* Networking.swift */,
 				5443E76C1D2172E1004E41AE /* Quote.swift */,
-				549FA8FC1D65E1920049E1A3 /* UpgradeManager.swift */,
-				549E37AA1D65F1BC0041BF56 /* UpgradeViewController.swift */,
 				5443E75C1D216976004E41AE /* Main.storyboard */,
 				5443E75F1D216976004E41AE /* Assets.xcassets */,
 				5443E7611D216976004E41AE /* LaunchScreen.storyboard */,
 				5443E7641D216976004E41AE /* Info.plist */,
 			);
-			path = IAPDemo;
+			path = AdsDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5443E7541D216976004E41AE /* IAPDemo */ = {
+		5443E7541D216976004E41AE /* AdsDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5443E7671D216976004E41AE /* Build configuration list for PBXNativeTarget "IAPDemo" */;
+			buildConfigurationList = 5443E7671D216976004E41AE /* Build configuration list for PBXNativeTarget "AdsDemo" */;
 			buildPhases = (
 				5443E7511D216976004E41AE /* Sources */,
 				5443E7521D216976004E41AE /* Frameworks */,
@@ -95,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = IAPDemo;
+			name = AdsDemo;
 			productName = WidgetDemo;
-			productReference = 5443E7551D216976004E41AE /* IAPDemo.app */;
+			productReference = 5443E7551D216976004E41AE /* AdsDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,13 +105,13 @@
 						DevelopmentTeam = KUK8W9TW2G;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
 				};
 			};
-			buildConfigurationList = 5443E7501D216976004E41AE /* Build configuration list for PBXProject "IAPDemo" */;
+			buildConfigurationList = 5443E7501D216976004E41AE /* Build configuration list for PBXProject "AdsDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -134,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5443E7541D216976004E41AE /* IAPDemo */,
+				5443E7541D216976004E41AE /* AdsDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -158,11 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5443E76D1D2172E1004E41AE /* Quote.swift in Sources */,
-				549E37AB1D65F1BC0041BF56 /* UpgradeViewController.swift in Sources */,
 				5443E76B1D217051004E41AE /* Networking.swift in Sources */,
 				5443E75B1D216976004E41AE /* QuoteViewController.swift in Sources */,
 				5443E7591D216976004E41AE /* AppDelegate.swift in Sources */,
-				549FA8FD1D65E1920049E1A3 /* UpgradeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,10 +263,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = IAPDemo/Info.plist;
+				INFOPLIST_FILE = AdsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.careerfoundry.randomquotes;
-				PRODUCT_NAME = IAPDemo;
+				PRODUCT_NAME = AdsDemo;
 			};
 			name = Debug;
 		};
@@ -286,17 +274,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = IAPDemo/Info.plist;
+				INFOPLIST_FILE = AdsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.careerfoundry.randomquotes;
-				PRODUCT_NAME = IAPDemo;
+				PRODUCT_NAME = AdsDemo;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5443E7501D216976004E41AE /* Build configuration list for PBXProject "IAPDemo" */ = {
+		5443E7501D216976004E41AE /* Build configuration list for PBXProject "AdsDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5443E7651D216976004E41AE /* Debug */,
@@ -305,7 +293,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5443E7671D216976004E41AE /* Build configuration list for PBXNativeTarget "IAPDemo" */ = {
+		5443E7671D216976004E41AE /* Build configuration list for PBXNativeTarget "AdsDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5443E7681D216976004E41AE /* Debug */,
