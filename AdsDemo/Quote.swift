@@ -12,9 +12,9 @@ class Quote: NSObject {
     let text: String
     let author: String
         
-    init(quoteDictionary: NSDictionary) {
-        text = quoteDictionary["quote"] as! String
-        author = quoteDictionary["author"] as! String
+    init(quoteDictionary: [String:String]) {
+        text = quoteDictionary["quote"]!
+        author = quoteDictionary["author"]!
     }
     
 }

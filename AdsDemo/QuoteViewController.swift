@@ -17,18 +17,18 @@ class QuoteViewController: UIViewController {
     
     let networking = Networking()
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         getNewQuote(.Movies)
     }
     
-    func getNewQuote(type: Networking.QuoteType) {
+    func getNewQuote(_ type: Networking.QuoteType) {
         quoteLabel.text = nil
         authorLabel.text = nil
         activityIndicator.startAnimating()
         
         networking.randomMoviesQuote(type) { (quote, error) in
             if let quote = quote {
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.quoteLabel.text = quote.text
                     self.authorLabel.text = quote.author
                     self.activityIndicator.stopAnimating()
@@ -37,12 +37,12 @@ class QuoteViewController: UIViewController {
         }
     }
     
-    @IBAction func newQuoteButtonTapped(sender: AnyObject) {
+    @IBAction func newQuoteButtonTapped(_ sender: AnyObject) {
         let quoteType = quoteTypeForSelectedSegmentedControlIndex()
         getNewQuote(quoteType)
     }
     
-    @IBAction func segmentedControlValueChanged(sender: AnyObject) {
+    @IBAction func segmentedControlValueChanged(_ sender: AnyObject) {
         let quoteType = quoteTypeForSelectedSegmentedControlIndex()
         getNewQuote(quoteType)
     }
